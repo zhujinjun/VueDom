@@ -9,7 +9,7 @@
             <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">组件4</a></li>
             <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">组件5</a></li>
         </ul>
-        <h3>Vue-router（路由）</h3>
+        <h3>Vue-router（路 由）</h3>
         <ul>
             <li><a href="https://vuejs.org" target="_blank" rel="noopener">路由1</a></li>
             <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">路由2</a></li>
