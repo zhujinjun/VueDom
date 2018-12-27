@@ -13,10 +13,10 @@
             <h3>组件管理</h3>
             <ul>
                 <li>
-                    <router-link to="/ComponentManage/componentDome">组件1</router-link>
+                    <router-link to="/ComponentManage/componentDome">基础组件</router-link>
                 </li>
                 <li>
-                    <router-link to="/ComponentManage/componentDome">组件2</router-link>
+                    <router-link to="/ComponentManage/CustomCom">自定义组件</router-link>
                 </li>
             </ul>
             <br>
