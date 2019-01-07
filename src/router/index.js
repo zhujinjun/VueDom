@@ -20,6 +20,11 @@ let rowses = [
     name: 'home',
     component: () =>
         import('../components/Home.vue')
+}, { //购物车
+    path: '/ComponentManage/cartMain',
+    name: 'cartMain',
+    component: () =>
+        import('../components/ComponentManage/CartMain.vue')
 }, {
     path: '/test',
     name: 'test',
