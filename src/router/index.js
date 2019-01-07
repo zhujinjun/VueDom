@@ -35,11 +35,6 @@ let rowses = [
     path: '/ComponentManage/componentDome',
     name: 'componentDome',
     component: componentDome
-}, { //自定义组件
-    path: '/ComponentManage/CustomCom',
-    name: 'CustomCom',
-    component: () =>
-        import('../components/ComponentManage/CustomCom.vue')
 }]
 export default new Router({
     routes: rowses
