@@ -13,13 +13,7 @@
             <h3>组件管理</h3>
             <ul>
                 <li>
-                    <router-link to="/ComponentManage/cartMain">购物车</router-link>
-                </li>
-                <li>
-                    <router-link to="/ComponentManage/componentDome">组件1</router-link>
-                </li>
-                <li>
-                    <router-link to="/ComponentManage/CustomCom">自定义组件</router-link>
+                    <router-link to="/cart/cartMain">购物车</router-link>
                 </li>
             </ul>
             <br>
@@ -95,7 +89,7 @@
     }
 
     #nav h3 {
-        line-height: 40px;
+
         margin: 10px 0 0;
     }
 

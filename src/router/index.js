@@ -2,8 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 //引入组件
 import test from '../components/Test.vue'
-import componentDome from '../components/ComponentManage/ComponentDome.vue'
-///ComponentManage/CustomCom
 
 //告诉vue使用路由
 Vue.use(Router)
@@ -22,19 +20,14 @@ let rowses = [
     component: () =>
         import('../components/Home.vue')
 }, { //购物车
-    path: '/ComponentManage/cartMain',
+    path: '/cart/cartMain',
     name: 'cartMain',
     component: () =>
-        import('../components/ComponentManage/CartMain.vue')
+        import('../components/cart/CartMain.vue')
 }, {
     path: '/test',
     name: 'test',
     component: test
-}, {
-    //基础组件
-    path: '/ComponentManage/componentDome',
-    name: 'componentDome',
-    component: componentDome
 }]
 export default new Router({
     routes: rowses
