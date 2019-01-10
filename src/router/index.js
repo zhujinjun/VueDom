@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-//引入组件
-import test from '../components/Test.vue'
 
 //告诉vue使用路由
 Vue.use(Router)
@@ -20,14 +18,10 @@ let rowses = [
     component: () =>
         import('../components/Home.vue')
 }, { //购物车
-    path: '/cart/cart-dome',
+    path: '/dome/cart-dome',
     name: 'cartMain',
     component: () =>
-        import('../components/cart/cart-dome.vue')
-}, {
-    path: '/test',
-    name: 'test',
-    component: test
+        import('../dome/cart-dome.vue')
 }]
 export default new Router({
     routes: rowses

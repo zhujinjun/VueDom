@@ -13,7 +13,7 @@
             <h3>组件管理</h3>
             <ul>
                 <li>
-                    <router-link to="/cart/cart-dome">购物车</router-link>
+                    <router-link to="/dome/cart-dome">购物车</router-link>
                 </li>
             </ul>
             <br>
@@ -21,7 +21,6 @@
             <ul>
                 <router-link to="/ComponentManage/componentDome">路由</router-link>
             </ul>
-            <router-link to="/test">测试</router-link>
 
 
         </div>
