@@ -26,9 +26,7 @@
         data() {
             return {
                 name: '双十一购物车',
-
                 cart: { name: '', price: 0, },
-
             }
         },
         methods: {

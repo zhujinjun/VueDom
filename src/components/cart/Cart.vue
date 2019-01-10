@@ -1,11 +1,12 @@
 <template>
     <div>
-        <div>
-            {{name}}
-        </div>
-
         <div style="margin-top:20px;">
-            <table style="border: 1px solid hsla(31,15%,50%,.25);">
+            <table border="1">
+                <tr>
+                    <td colspan="4">
+                        {{name}}
+                    </td>
+                </tr>
                 <tr>
                     <th>序号</th>
                     <th>商品名称</th>
