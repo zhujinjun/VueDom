@@ -17,7 +17,7 @@
 </template>
 
 <script>
-    import cart from './Cart.vue'
+    import cart from './cart.vue'
     export default {
         name: 'cartMain',
         components: {

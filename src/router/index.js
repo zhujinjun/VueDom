@@ -20,10 +20,10 @@ let rowses = [
     component: () =>
         import('../components/Home.vue')
 }, { //购物车
-    path: '/cart/cartMain',
+    path: '/cart/cart-dome',
     name: 'cartMain',
     component: () =>
-        import('../components/cart/CartMain.vue')
+        import('../components/cart/cart-dome.vue')
 }, {
     path: '/test',
     name: 'test',
