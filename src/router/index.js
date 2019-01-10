@@ -11,12 +11,12 @@ let rowses = [
     path: '/helloWorld',
     name: 'helloWorld',
     component: () =>
-        import('../components/HelloWorld.vue')
+        import('./../hello-world.vue')
 }, { //首页
     path: '/home',
     name: 'home',
     component: () =>
-        import('../components/Home.vue')
+        import('./../home.vue')
 }, { //购物车
     path: '/dome/cart-dome',
     name: 'cartMain',
