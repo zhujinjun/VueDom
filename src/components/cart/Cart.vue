@@ -30,15 +30,26 @@
         name: 'cart',
         data() {
             return {
-                carts: [],
+                carts: JSON.parse(localStorage.getItem("cart-Data")) || [],
             }
         },
         props: {
             name: { type: String, required: true }
-
+        },
+        watch: {
+            carts: {
+                handler(val, oldVal) {
+                    localStorage.setItem("cart-Data", JSON.stringify(val));
+                },
+                deep: true
+            }
         },
         created() {
             this.$bus.$on('addCart', cart => {
+                if (cart.name === '') {
+                    alert("商品名称并不能为空！")
+                    return;
+                }
                 let _cart = this.carts.find(x => x.name === cart.name);
                 if (_cart) {
                     _cart.price = parseInt(_cart.price) + parseInt(cart.price)
@@ -52,7 +63,12 @@
                     });
                 }
             });
-        }
+        },
+        methods: {
+            addcart() {
+                this.$bus.$emit('addCart', this.cart);
+            }
+        },
 
     }
 </script>
