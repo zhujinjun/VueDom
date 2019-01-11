@@ -33,7 +33,6 @@
         },
         methods: {
             addcart() {
-                // console.log(this.$refs.usernameInput);
                 this.$bus.$emit('addCart', this.cart);
             }
         },
