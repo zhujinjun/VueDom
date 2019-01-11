@@ -15,14 +15,15 @@
                 <li>
                     <router-link to="/dome/cart-dome">购物车</router-link>
                 </li>
+                <li>
+                    <router-link to="/dome/form-dome">表单</router-link>
+                </li>
             </ul>
             <br>
             <h3>路由管理</h3>
             <ul>
                 <router-link to="/ComponentManage/componentDome">路由</router-link>
             </ul>
-
-
         </div>
         <div id="section">
             <router-view></router-view>
@@ -31,19 +32,18 @@
 
         <!-- <div id="footer">
             © 2018
-        </div> -->
+    </div>-->
     </div>
-
 </template>
 <script>
     export default {
-        name: 'app'
-    }
+        name: "app"
+    };
 </script>
 
 <style>
     #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        font-family: "Avenir", Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
@@ -83,7 +83,6 @@
     }
 
     #nav h3 {
-
         margin: 10px 0 0;
     }
 

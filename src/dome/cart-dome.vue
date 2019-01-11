@@ -11,7 +11,7 @@
             &nbsp;&nbsp;
             <input type="button" value="添加" @click="addcart()">
         </div>
-        <cart :name='name'></cart>
+        <cart :name='name' ref="usernameInput"></cart>
 
     </div>
 </template>
@@ -25,14 +25,22 @@
         },
         data() {
             return {
+                testTitle: '',
+                testValue: 11,
                 name: '双十一购物车',
                 cart: { name: '', price: 0, },
             }
         },
         methods: {
             addcart() {
+                // console.log(this.$refs.usernameInput);
                 this.$bus.$emit('addCart', this.cart);
             }
         },
+        provide() {
+            return {
+                testTitle: 'AHello',
+            }
+        }
     }
 </script>

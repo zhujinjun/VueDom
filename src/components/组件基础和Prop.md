@@ -63,4 +63,45 @@ props: {
     }
 }
 ```
+#### 六、访问根实例
+通过 `$root`
+```
+// 获取根组件的数据
+this.$root.foo
+
+// 写入根组件的数据
+this.$root.foo = 2
+```
+#### 七、访问父级组件实例
+通过 `$parent`
+```
+// 获取根组件的数据
+this.$parent.foo
+```
+注意：这种只能访问当前组件的父级，不能隔代访问。最好使用prop方式传入子组件。
+#### 八、访问子组件实例或子元素
+尽管存在 prop 和事件，有的时候你仍可能需要在 JavaScript 里直接访问一个子组件。为了达到这个目的，你可以通过 ref 特性为这个子组件赋予一个 ID 引用
+```
+<base-input ref="usernameInput"></base-input>
+```
+访问
+```
+this.$refs.usernameInput
+```
+#### 九 依赖注入（provide和inject）、
+- provide：提供给后代组件的数据和方法
+  ```
+  provide: {
+    foo: 'bar'
+  }
+  ```
+- inject：子组件注入父组件提供的属性和方法
+  ```
+  inject: {
+    foo: { default: 'foo' }
+  }
+  //用法
+  this.foo
+  ```
+
 

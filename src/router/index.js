@@ -19,9 +19,14 @@ let rowses = [
         import('./../home.vue')
 }, { //购物车
     path: '/dome/cart-dome',
-    name: 'cartMain',
+    name: 'cart-dome',
     component: () =>
         import('../dome/cart-dome.vue')
+}, { //表单
+    path: '/dome/form-dome',
+    name: 'form-dome',
+    component: () =>
+        import('../dome/form-dome.vue')
 }]
 export default new Router({
     routes: rowses

@@ -30,6 +30,7 @@
         name: 'cart',
         data() {
             return {
+                testValue: 10,
                 carts: JSON.parse(localStorage.getItem("cart-Data")) || [],
             }
         },
@@ -46,6 +47,7 @@
         },
         created() {
             this.$bus.$on('addCart', cart => {
+                console.log(this.testTitle);
                 if (cart.name === '') {
                     alert("商品名称并不能为空！")
                     return;
@@ -64,12 +66,9 @@
                 }
             });
         },
-        methods: {
-            addcart() {
-                this.$bus.$emit('addCart', this.cart);
-            }
-        },
-
+        inject: {
+            testTitle: { default: 'hello' }
+        }
     }
 </script>
 
