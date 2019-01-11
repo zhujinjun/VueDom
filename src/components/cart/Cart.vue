@@ -1,5 +1,6 @@
 <template>
     <div>
+        <input type="text" v-model="userName" @change="setUser">
         <div style="margin-top:20px;">
             <table border="1">
                 <tr>
@@ -30,10 +31,11 @@
         name: 'cart',
         data() {
             return {
-                testValue: 10,
+                userName: '',
                 carts: JSON.parse(localStorage.getItem("cart-Data")) || [],
             }
         },
+        //接收到父组件值
         props: {
             name: { type: String, required: true }
         },
@@ -46,8 +48,8 @@
             }
         },
         created() {
+            //两个组件之间传值($on 监听事件)
             this.$bus.$on('addCart', cart => {
-                console.log(this.testTitle);
                 if (cart.name === '') {
                     alert("商品名称并不能为空！")
                     return;
@@ -66,8 +68,11 @@
                 }
             });
         },
-        inject: {
-            testTitle: { default: 'hello' }
+        methods: {
+            setUser: function () {
+                //事件传递给父组件
+                this.$emit("transferUser", this.userName);
+            }
         }
     }
 </script>

@@ -11,7 +11,10 @@
             &nbsp;&nbsp;
             <input type="button" value="添加" @click="addcart()">
         </div>
-        <cart :name='name' ref="usernameInput"></cart>
+        <div>
+            子组件传值：{{uname}}
+        </div>
+        <cart :name='name' @transferUser="getUser"></cart>
 
     </div>
 </template>
@@ -25,21 +28,21 @@
         },
         data() {
             return {
-                testTitle: '',
-                testValue: 11,
+                uname: '',
                 name: '双十一购物车',
                 cart: { name: '', price: 0, },
             }
         },
         methods: {
+            //两个组件之间传值($emit 派发事件)
             addcart() {
                 this.$bus.$emit('addCart', this.cart);
+            },
+            //接收子组件值
+            getUser(value) {
+                console.log(value);
+                this.uname = value;
             }
         },
-        provide() {
-            return {
-                testTitle: 'AHello',
-            }
-        }
     }
 </script>
