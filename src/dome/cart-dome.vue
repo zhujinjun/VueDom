@@ -9,7 +9,8 @@
             <label for="商品价格">商品价格：</label>
             <input type="text" v-model="cart.price">
             &nbsp;&nbsp;
-            <input type="button" value="添加" @click="addcart()">
+            <!-- <input type="button" value="添加" @click="addcart()"> -->
+            <Button type="primary" @click="addcart()">添加</Button>
         </div>
         <div>
             子组件传值：{{uname}}

@@ -2,8 +2,11 @@
 import Vue from 'vue'
 //导入App组件对象
 import App from './App.vue'
+
 //引入路由
 import router from './router'
+
+import './plugins/iview.js'
 //设置项目开发提示
 Vue.config.productionTip = false
 Vue.prototype.$bus = new Vue();

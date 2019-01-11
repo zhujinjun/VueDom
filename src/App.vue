@@ -93,7 +93,7 @@
     }
 
     li {
-        margin: 15px 10px;
+        margin: 15px 10px !important;
     }
 
     a {
