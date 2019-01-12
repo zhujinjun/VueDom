@@ -40,7 +40,8 @@
                 },
                 ruleValidate: {
                     username: [
-                        { required: true, message: '用户名不能为空', trigger: 'blur' }
+                        { required: true, message: '用户名不能为空', trigger: 'blur' },
+                        { min: 3, max: 8, message: '用户数量在3到8之间', trigger: 'blur' }
                     ],
                     pwd: [
                         { required: true, message: '密码不能为空', trigger: 'blur' },
@@ -50,21 +51,21 @@
         },
         methods: {
             testinput(v) {
-                console.log(v);
+                // console.log(v);
             },
             handleSubmit(name) {
-                this.$refs[name].validate((valid) => {
+                this.$refs[name].validate(valid => {
                     if (valid) {
                         console.log("成功");
                     } else {
                         console.log("失败");
+                        return false;
                     }
                 })
             },
             handleReset(name) {
-                //console.log(this.$refs[name]);
-                //this.$refs[name].resetFields();
-
+                // console.log(this.$refs[name]);
+                // this.$refs[name].resetFields();
             }
         }
     }

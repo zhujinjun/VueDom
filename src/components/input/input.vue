@@ -27,6 +27,8 @@
                 let value = event.target.value;
                 //通知父组件，值更新了
                 this.$emit('input', value);
+                //通知formitem组件
+                this.$parent.$emit('validate', value);
             }
         }
     }
