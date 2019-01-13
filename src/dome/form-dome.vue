@@ -4,10 +4,10 @@
         <div class="form">
             <Form ref="formValidate" :model="formValidate" :rules="ruleValidate">
                 <Form-Item label="用户名" prop="username">
-                    <Input v-model="formValidate.username" @input='testinput'></Input>
+                    <Input v-model="formValidate.username" @input="testinput"></Input>
                 </Form-Item>
                 <Form-Item label="密码" prop="pwd">
-                    <Input v-model="formValidate.pwd" type="password" @input='testinput'></Input>
+                    <Input v-model="formValidate.pwd" type="password" @input="testinput"></Input>
                 </Form-Item>
                 <Form-Item>
                     <Button type="primary" @click="handleSubmit('formValidate')">提交</Button>
@@ -15,17 +15,16 @@
                 </Form-Item>
             </Form>
         </div>
-        <p>{{formValidate.username}}</p>
-        <p>{{formValidate.pwd}}</p>
+
     </div>
 </template>
 
 <script>
-    import Input from '../components/input/input.vue'
-    import FormItem from '../components/form/form-item.vue'
-    import Form from '../components/form/form.vue'
+    import Input from "../components/input/input.vue";
+    import FormItem from "../components/form/form-item.vue";
+    import Form from "../components/form/form.vue";
     export default {
-        name: 'login',
+        name: "login",
         components: {
             Input,
             FormItem,
@@ -33,42 +32,41 @@
         },
         data() {
             return {
-                someinput: 'hello',
+                someinput: "hello",
                 formValidate: {
-                    username: '',
-                    pwd: ''
+                    username: "",
+                    pwd: ""
                 },
                 ruleValidate: {
                     username: [
-                        { required: true, message: '用户名不能为空', trigger: 'blur' },
-                        { min: 3, max: 8, message: '用户数量在3到8之间', trigger: 'blur' }
+                        { required: true, message: "用户名不能为空", trigger: "blur" },
+                        { min: 3, max: 8, message: "用户数量在3到8之间", trigger: "blur" }
                     ],
-                    pwd: [
-                        { required: true, message: '密码不能为空', trigger: 'blur' },
-                    ],
+                    pwd: [{ required: true, message: "密码不能为空", trigger: "blur" }]
                 }
-            }
+            };
         },
         methods: {
             testinput(v) {
                 // console.log(v);
             },
             handleSubmit(name) {
+                console.log(this.$refs[name]);
                 this.$refs[name].validate(valid => {
+                    console.log(valid);
                     if (valid) {
-                        console.log("成功");
+                        alert("成功")
                     } else {
-                        console.log("失败");
-                        return false;
+                        alert("失败");
                     }
-                })
+                });
             },
             handleReset(name) {
                 // console.log(this.$refs[name]);
                 // this.$refs[name].resetFields();
             }
         }
-    }
+    };
 </script>
 
 <style scoped>
@@ -77,7 +75,7 @@
     }
 
     .form {
-        border: 1px solid hsla(31, 15%, 50%, .25);
+        border: 1px solid hsla(31, 15%, 50%, 0.25);
         padding: 10px;
     }
 </style>

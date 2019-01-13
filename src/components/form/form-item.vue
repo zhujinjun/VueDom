@@ -10,22 +10,21 @@
 </template>
 
 <script>
-    import schema from 'async-validator';
+    import schema from "async-validator";
     export default {
-
-        name: 'FormItem',
+        name: "FormItem",
         //注入form提供的model数据和rules数据
-        inject: ['form'],
+        inject: ["form"],
         data() {
             return {
-                validateState: '',
-                validateMessage: '',
-            }
+                validateState: "",
+                validateMessage: ""
+            };
         },
         props: {
             label: {
                 type: String,
-                default: '',
+                default: ""
             },
             prop: {
                 type: String
@@ -33,46 +32,43 @@
         },
         created() {
             //监听formitem派发的事件
-            this.$on('validate', this.validate);
+            this.$on("validate", this.validate);
         },
         mounted() {
             //挂在form 派发事件
             if (this.prop) {
-                this.$parent.$emit('addFormItem', this);
+                this.$parent.$emit("addFormItem", this);
             }
         },
         methods: {
             validate() {
-                return new Promise(resolv => {
+                return new Promise((resolve, reject) => {
                     //校验规则
                     var descriptor = {
                         [this.prop]: this.form.rules[[this.prop]]
-                    }
-                    //校验input 输入值
+                    };
+                    //校验input输入值
                     let model = {
                         [this.prop]: this.form.model[[this.prop]]
                     };
-                    // let model = {
-                    //     [this.prop]: value
-                    // };
-
                     const validator = new schema(descriptor);
                     validator.validate(model, errors => {
                         if (errors) {
-                            this.validateState = 'error';
+                            this.validateState = "error";
                             this.validateMessage = errors[0].message;
-                            resolv(false);
+                            //resolve(false);
+                            return reject();
                         } else {
-                            this.validateState = '';
-                            this.validateMessage = '';
-                            resolv(true);
+                            this.validateState = "";
+                            this.validateMessage = "";
+                            //resolve(true);
+                            return resolve();
                         }
                     });
                 });
-
             }
-        },
-    }
+        }
+    };
 </script>
 
 <style scoped>
