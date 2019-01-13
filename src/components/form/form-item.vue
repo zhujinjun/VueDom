@@ -33,6 +33,7 @@
         created() {
             //监听formitem派发的事件
             this.$on("validate", this.validate);
+            this.$on("resetField", this.validate);
         },
         mounted() {
             //挂在form 派发事件
@@ -41,6 +42,7 @@
             }
         },
         methods: {
+            //校验表单
             validate() {
                 return new Promise((resolve, reject) => {
                     //校验规则
@@ -66,6 +68,15 @@
                         }
                     });
                 });
+            },
+            //重置表单
+            resetField() {
+                console.log(1111);
+
+                this.validateState = "";
+                this.validateMessage = "";
+                // this.form.rules = [];
+                // this.form.model = [];
             }
         }
     };

@@ -29,6 +29,8 @@
                 this.$emit('input', value);
                 //通知formitem组件
                 this.$parent.$emit('validate', value);
+                //通知formitem组件
+                this.$parent.$emit('resetField', value);
             }
         }
     }
