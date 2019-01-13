@@ -26,7 +26,19 @@ let rowses = [
     name: 'form-dome',
     component: () =>
         import('./dome/form-dome.vue')
+}, { //路由1
+    path: '/dome/route-dome1/:id',
+    name: 'route-dome1',
+    component: () =>
+        import('./dome/route-dome1.vue')
+}, { //路由2
+    path: '/dome/route-dome2/:id/:msg',
+    name: 'route-dome2',
+    component: () =>
+        import('./dome/route-dome2.vue')
 }]
 export default new Router({
+    //History 模式(默认 hash 模式)
+    mode: 'history',
     routes: rowses
 })

@@ -22,12 +22,17 @@
             <br>
             <h3>路由管理</h3>
             <ul>
-                <router-link to="/ComponentManage/componentDome">路由</router-link>
+                <li>
+                    <router-link to="/dome/route-dome1/10086">路由1</router-link>
+                </li>
+                <li>
+                    <router-link to="/dome/route-dome2/10086/缴费50元?foo=bar">路由2</router-link>
+                </li>
             </ul>
         </div>
         <div id="section">
+            <!-- 路由出口 -->
             <router-view></router-view>
-            <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
         </div>
 
         <!-- <div id="footer">
