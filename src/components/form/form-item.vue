@@ -58,23 +58,23 @@
                         if (errors) {
                             this.validateState = "error";
                             this.validateMessage = errors[0].message;
-                            //resolve(false);
-                            return reject();
+                            reject('错误');
                         } else {
                             this.validateState = "";
                             this.validateMessage = "";
-                            //resolve(true);
-                            return resolve();
+                            resolve('成功');
                         }
                     });
                 });
             },
             //重置表单
             resetField() {
-                console.log(1111);
-
                 this.validateState = "";
                 this.validateMessage = "";
+                console.log(this.form.model);
+                this.form.model[[this.prop]] = '';
+
+                console.log(this.form.model);
                 // this.form.rules = [];
                 // this.form.model = [];
             }

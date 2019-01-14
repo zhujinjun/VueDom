@@ -53,11 +53,10 @@
             handleSubmit(name) {
                 console.log(this.$refs[name]);
                 this.$refs[name].validate(valid => {
-                    console.log(valid);
                     if (valid) {
-                        alert("成功")
+                        console.log("成功");
                     } else {
-                        alert("失败");
+                        console.log("失败");
                     }
                 });
             },

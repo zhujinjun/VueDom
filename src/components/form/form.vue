@@ -46,20 +46,24 @@
                 //       ret = false;
                 //     }
                 //   });
+
                 const promises = this.arrs.map(item => {
                     console.log(item.validate());
                     return item.validate();
                 });
+
+                //异步批量校验
                 Promise.all(promises)
-                    .then(function (posts) {
+                    .then((succeed) => {
                         callback(true);
                     })
-                    .catch(function (reason) {
+                    .catch((error) => {
                         callback(false);
                     });
             },
+
             resetFields() {
-                console.log(this.arrs);
+
                 this.arrs.forEach(field => {
                     console.log(field);
                     field.resetField();
