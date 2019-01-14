@@ -60,7 +60,6 @@
             },
             resetFields() {
                 console.log(this.arrs);
-
                 this.arrs.forEach(field => {
                     console.log(field);
                     field.resetField();

@@ -25,10 +25,10 @@
                 // const redirect = this.$route.query.redirect;
                 if (redirect) {
                     //跳转到指定页面
-                    this.$route.push(redirect);
+                    this.$router.push(redirect);
                 } else {
                     //重定向到首页
-                    this.$route.push('/');
+                    this.$router.push('/');
                 }
             }
         }

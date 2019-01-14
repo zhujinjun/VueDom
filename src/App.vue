@@ -1,45 +1,7 @@
 <template>
     <div id="app">
-        <div id="header">
-            <h1>
-                欢迎使用
-                <img alt="Vue logo" src="./assets/logo.png" width="35" height="35">
-            </h1>
-        </div>
-        <div id="nav">
-            <router-link to="/login">登录</router-link>
-            <br>
-            <router-link to="/main/helloWorld">概览</router-link>
-            <br>
-            <router-link to="/main/home">首页</router-link>
-            <h3>组件管理</h3>
-            <ul>
-                <li>
-                    <router-link to="/main/dome/cart-dome">购物车</router-link>
-                </li>
-                <li>
-                    <router-link to="/main/dome/form-dome">表单</router-link>
-                </li>
-            </ul>
-            <br>
-            <h3>路由管理</h3>
-            <ul>
-                <li>
-                    <router-link to="/main/dome/route-dome1/10086">路由1</router-link>
-                </li>
-                <li>
-                    <router-link to="/main/dome/route-dome2/10086/缴费50元?foo=bar">路由2</router-link>
-                </li>
-            </ul>
-        </div>
-        <div id="section">
-            <!-- 路由出口 -->
-            <router-view></router-view>
-        </div>
 
-        <!-- <div id="footer">
-            © 2018
-    </div>-->
+        <router-view></router-view>
     </div>
 </template>
 <script>

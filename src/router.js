@@ -5,13 +5,14 @@ Vue.use(Router)
 let rowses = [
 { //重定项
     path: '/',
-    redirect: '/home'
+    redirect: '/main'
 }, {
     path: '/login',
     name: 'login',
     component: () =>
         import('./login.vue')
-}, {
+},
+{
     path: '/main',
     name: 'main',
     component: () =>
