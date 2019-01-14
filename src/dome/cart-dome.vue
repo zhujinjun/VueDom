@@ -1,9 +1,7 @@
 <template>
     <div>
-        <h3>{{$store.state.count}}</h3>
-        <div>
-            <button @click="execute()">vuex</button>
-        </div>
+
+
         <h3>购物车练习</h3>
 
         <div>
@@ -45,9 +43,7 @@
                 console.log(value);
                 this.uname = value;
             },
-            execute() {
-                this.$store.commit('getCount');
-            }
+            
         }
     };
 </script>

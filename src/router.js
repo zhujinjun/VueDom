@@ -43,11 +43,11 @@ let rowses = [
         name: 'route-dome1',
         component: () =>
             import('./dome/route-dome1.vue')
-    }, { //路由2
-        path: 'dome/route-dome2/:id/:msg',
-        name: 'route-dome2',
+    }, { //vuex状态
+        path: 'dome/vuex-dome',
+        name: 'vuex-dome',
         component: () =>
-            import('./dome/route-dome2.vue')
+            import('./dome/vuex-dome.vue')
     }]
 }, ]
 const router = new Router({

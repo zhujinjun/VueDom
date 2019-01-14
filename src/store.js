@@ -4,15 +4,23 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    //数据银行（全局共享）
+    //数据存储（全局共享）
     state: {
         count: 1
     },
+    //数据加工
+    getters: {
+        doneTodos: state => {
+            return state.count + '元';
+        }
+    },
+    //修改state中存储的值
     mutations: {
-        getCount(state) {
+        increment(state) {
             state.count += 1;
         }
     },
+    //异步执行
     actions: {
 
     }

@@ -31,6 +31,12 @@
                     <router-link to="/main/dome/route-dome2/10086/缴费50元?foo=bar">路由2</router-link>
                 </li>
             </ul>
+            <h3>Vuex状态管理</h3>
+            <ul>
+                <li>
+                    <router-link to="/main/dome/vuex-dome">Vuex状态</router-link>
+                </li>
+            </ul>
         </div>
         <div id="section">
             <!-- 父组件必须有一个路由出口，负责显示子路由内容 -->
