@@ -11,6 +11,7 @@
         <div class="com">
             <comvuex></comvuex>
         </div>
+
     </div>
 </template>
 

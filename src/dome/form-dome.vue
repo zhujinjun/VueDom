@@ -51,7 +51,6 @@
                 // console.log(v);
             },
             handleSubmit(name) {
-                console.log(this.$refs[name]);
                 this.$refs[name].validate(valid => {
                     if (valid) {
                         console.log("成功");

@@ -28,7 +28,7 @@
             this.$on("addFormItem", item => {
                 this.arrs.push(item);
             });
-            console.log(this.arrs);
+            //console.log(this.arrs);
         },
         methods: {
             async validate(callback) {
@@ -47,13 +47,11 @@
                 //     }
                 //   });
 
-                const promises = this.arrs.map(item => {
-                    console.log(item.validate());
+                const tasks = this.arrs.map(item => {
                     return item.validate();
                 });
-
                 //异步批量校验
-                Promise.all(promises)
+                await Promise.all(tasks)
                     .then((succeed) => {
                         callback(true);
                     })
@@ -63,7 +61,6 @@
             },
 
             resetFields() {
-
                 this.arrs.forEach(field => {
                     console.log(field);
                     field.resetField();

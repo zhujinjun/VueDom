@@ -43,7 +43,7 @@
         },
         methods: {
             //校验表单
-            validate() {
+            validate(value) {
                 return new Promise((resolve, reject) => {
                     //校验规则
                     var descriptor = {
@@ -58,23 +58,20 @@
                         if (errors) {
                             this.validateState = "error";
                             this.validateMessage = errors[0].message;
-                            reject('错误');
+                            reject();
                         } else {
                             this.validateState = "";
                             this.validateMessage = "";
-                            resolve('成功');
+                            resolve();
                         }
                     });
                 });
             },
             //重置表单
-            resetField() {
+            resetField(value) {
                 this.validateState = "";
                 this.validateMessage = "";
-                console.log(this.form.model);
-                this.form.model[[this.prop]] = '';
-
-                console.log(this.form.model);
+                console.log(this.validate);
                 // this.form.rules = [];
                 // this.form.model = [];
             }

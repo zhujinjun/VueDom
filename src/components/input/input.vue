@@ -24,13 +24,13 @@
         },
         methods: {
             handleInput(event) {
-                let value = event.target.value;
+                this.currentValue = event.target.value;
                 //通知父组件，值更新了
-                this.$emit('input', value);
+                this.$emit('input', this.currentValue);
                 //通知formitem组件
-                this.$parent.$emit('validate', value);
+                this.$parent.$emit('validate', this.currentValue);
                 //通知formitem组件
-                this.$parent.$emit('resetField', value);
+                this.$parent.$emit('resetField', this.currentValue);
             }
         }
     }
